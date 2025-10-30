@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EchoMind — Understanding the world through connection and culture.</title>
+<style>
+    /* Reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { 
+        font-family: 'Segoe UI', Arial, sans-serif; 
+        background-color: #121212; 
+        color: #f5f5f5; 
+        line-height: 1.6; 
+    }
+    a { text-decoration: none; color: inherit; transition: color 0.3s; }
+
+    /* Header */
+    header { 
+        background: linear-gradient(90deg, #009688, #4CAF50, #FF9800); 
+        color: white; 
+        text-align: center; 
+        padding: 40px 20px; 
+        box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+    header h1 { font-size: 2.8em; margin-bottom: 10px; letter-spacing: 1px; animation: fadeInDown 1s ease-in-out; }
+    header h2 { font-size: 2.0em; margin-bottom: 10px; letter-spacing: 1px; animation: fadeInDown 1s ease-in-out; }
+    header p { font-size: 1.2em; animation: fadeInUp 1s ease-in-out; }
+
+    /* Navigation */
+    nav { 
+        background-color: #1f1f1f; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        padding: 10px 20px; 
+        flex-wrap: wrap;
+        border-bottom: 1px solid #333;
+    }
+    .nav-links a { 
+        color: #f5f5f5; 
+        padding: 12px 18px; 
+        display: inline-block; 
+        font-weight: bold;
+    }
+    .nav-links a:hover { color: #FF9800; }
+
+    /* Search Bar */
+    .search-bar { display: flex; align-items: center; }
+    .search-bar input[type="text"] {
+        padding: 8px 12px;
+        border-radius: 20px;
+        border: 1px solid #444;
+        outline: none;
+        width: 200px;
+        background-color: #222;
+        color: #f5f5f5;
+        transition: width 0.3s;
+    }
+    .search-bar input[type="text"]:focus {
+        width: 260px;
+        border-color: #FF9800;
+    }
+    .search-bar button {
+        background-color: #FF9800;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        margin-left: 8px;
+        cursor: pointer;
+        transition: background 0.3s;
+        font-size: 16px;
+    }
+    .search-bar button:hover {
+        background-color: #4CAF50;
+    }
+
+    /* Layout */
+    .container { 
+        display: flex; 
+        max-width: 1200px; 
+        margin: 30px auto; 
+        padding: 0 20px; 
+        gap: 25px; 
+        flex-wrap: wrap; 
+    }
+    .main { flex: 3; }
+    .sidebar { 
+        flex: 1; 
+        background-color: #1f1f1f; 
+        padding: 20px; 
+        border-radius: 10px; 
+        box-shadow: 0 2px 8px rgba(0,0,0,0.4); 
+        height: fit-content;
+        animation: fadeIn 1.2s ease;
+    }
+
+    /* Articles */
+    .article-card { 
+        background-color: #1f1f1f; 
+        margin-bottom: 25px; 
+        border-radius: 12px; 
+        box-shadow: 0 3px 8px rgba(0,0,0,0.4); 
+        overflow: hidden; 
+        transform: translateY(30px);
+        opacity: 0;
+        animation: fadeInUp 0.8s ease forwards;
+    }
+    .article-card:nth-child(2) { animation-delay: 0.2s; }
+    .article-card:nth-child(3) { animation-delay: 0.4s; }
+    .article-card:nth-child(4) { animation-delay: 0.6s; }
+
+    .article-card:hover { 
+        transform: translateY(-5px); 
+        box-shadow: 0 6px 15px rgba(0,0,0,0.6); 
+    }
+    .article-card img { width: 100%; height: 200px; object-fit: cover; }
+    .article-card-content { padding: 18px; }
+    .article-card-content h2 a { color: #4CAF50; }
+    .article-card-content h2 a:hover { color: #FF9800; }
+    .author { font-style: italic; font-size: 0.9em; color: #aaa; margin-bottom: 10px; }
+
+    /* Sidebar */
+    .sidebar h3 { margin-bottom: 15px; color: #FF9800; font-size: 1.2em; border-bottom: 2px solid #FF9800; padding-bottom: 5px; }
+    .sidebar a { display: block; padding: 8px 0; color: #ddd; border-bottom: 1px solid #333; }
+    .sidebar a:hover { color: #4CAF50; }
+
+    /* Footer */
+    footer { 
+        background-color: #1f1f1f; 
+        color: #bbb; 
+        text-align: center; 
+        padding: 25px 0; 
+        margin-top: 50px; 
+    }
+
+    /* Animations */
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Responsive */
+    @media(max-width: 900px) {
+        .container { flex-direction: column; }
+        .search-bar input[type="text"] { width: 150px; }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>EchoNews</h1>
+    <h2>Understanding the world through connection and culture</h2>
+    <p>News and insights on society and culture</p>
+</header>
+
+<nav>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="article1.html">Connection & Isolation</a>
+        <a href="article2.html">Influencers & Journalism</a>
+        <a href="article3.html">Future of Work</a>
+        <a href="article4.html">Digital Minimalism</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search articles...">
+        <button id="searchButton">🔍</button>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="main" id="articleContainer">
+        <!-- Article 1 -->
+        <div class="article-card" data-title="connection isolation">
+            <img src="ado.jpeg" alt="Connected or isolated">
+            <div class="article-card-content">
+                <p class="author">Written by MERCIER Alexis, On October 26, 2025</p>
+                <h2><a href="article1.html">Are We the Most Connected or the Most Isolated Generation?</a></h2>
+                <p>In the digital era, young people spend countless hours on social media, raising the question of real social isolation.</p>
+            </div>
+        </div>
+
+        <!-- Article 2 -->
+        <div class="article-card" data-title="influencers journalism">
+            <img src="Journalists-vs-Influencers.webp" alt="Influencers and journalism">
+            <div class="article-card-content">
+                <p class="author">Written by JABER Sami, On October 25, 2025</p>
+                <h2><a href="article2.html">Are Influencers Replacing Journalists?</a></h2>
+                <p>Influencers spread information quickly, but can they really replace reliable, investigative journalism?</p>
+            </div>
+        </div>
+
+        <!-- Article 3 -->
+        <div class="article-card" data-title="future work automation">
+            <img src="REFLE.png" alt="Future of work">
+            <div class="article-card-content">
+                <p class="author">Written by ODIN Baptiste, On October 28, 2025</p>
+                <h2><a href="article3.html">The Future of Work in the Age of Automation</a></h2>
+                <p>Automation is reshaping the professional world, requiring new skills and adaptability for rapid change.</p>
+            </div>
+        </div>
+
+        <!-- Article 4 -->
+        <div class="article-card" data-title="digital minimalism screens">
+            <img src="photoart22.jpeg" alt="Digital minimalism">
+            <div class="article-card-content">
+                <p class="author">Written by GAIN-BROCHET Elliot, On October 29, 2025</p>
+                <h2><a href="article4.html">Digital Minimalism: Living Better with Less Screen Time</a></h2>
+                <p>Millions are embracing digital minimalism — a lifestyle focused on intentional, mindful technology use.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <h3>Recent Articles</h3>
+        <a href="article1.html">Connection & Isolation</a>
+        <a href="article2.html">Influencers & Journalism</a>
+        <a href="article3.html">Future of Work</a>
+        <a href="article4.html">Digital Minimalism</a>
+    </div>
+</div>
+
+<footer>
+    <p>© 2025 Society & Culture | contact@societyculture.fr</p>
+</footer>
+
+<!-- Search JavaScript -->
+<script>
+document.getElementById("searchButton").addEventListener("click", function() {
+    const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+    const articles = document.querySelectorAll(".article-card");
+
+    articles.forEach(article => {
+        const title = article.getAttribute("data-title");
+        if (title.includes(searchTerm)) {
+            article.style.display = "block";
+        } else {
+            article.style.display = "none";
+        }
+    });
+});
+
+document.getElementById("searchInput").addEventListener("keyup", function(e) {
+    if (e.key === "Enter") {
+        document.getElementById("searchButton").click();
+    }
+});
+</script>
+
+</body>
+</html>
