@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merci – Société & Culture</title>
+<style>
+    /* Reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { 
+        font-family: 'Segoe UI', Arial, sans-serif; 
+        background-color: #121212; 
+        color: #f5f5f5; 
+        line-height: 1.6; 
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    /* Header */
+    header {
+        background: linear-gradient(90deg, #009688, #4CAF50, #FF9800);
+        color: white;
+        text-align: center;
+        padding: 40px 20px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+    header h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        animation: fadeInDown 1s ease-in-out;
+    }
+    header p {
+        font-size: 1.1em;
+        opacity: 0.9;
+        animation: fadeInUp 1s ease-in-out;
+    }
+
+    /* Main */
+    main {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 50px 20px;
+    }
+    .message-box {
+        background-color: #1f1f1f;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+        max-width: 600px;
+        animation: popIn 0.8s ease;
+    }
+    .message-box h2 {
+        color: #FF9800;
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+    .message-box p {
+        color: #ccc;
+        margin-bottom: 30px;
+        font-size: 1.1em;
+    }
+    .message-box button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 12px 30px;
+        cursor: pointer;
+        font-size: 1em;
+        transition: background 0.3s, transform 0.2s;
+    }
+    .message-box button:hover {
+        background-color: #FF9800;
+        transform: translateY(-2px);
+    }
+
+    /* Footer */
+    footer {
+        background-color: #1f1f1f;
+        color: #bbb;
+        text-align: center;
+        padding: 20px 0;
+        border-top: 1px solid #333;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes popIn {
+        from { opacity: 0; transform: scale(0.9); }
+        to { opacity: 1; transform: scale(1); }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Thank you for your message!</h1>
+    <p>Your request has been sent to the Society & Culture team.</p>
+</header>
+
+<main>
+    <div class="message-box">
+        <h2>💬 We will get back to you very soon.</h2>
+        <p>We have received your message and our team will contact you as soon as possible.  
+        In the meantime, continue exploring our articles on society and culture.</p>
+        <button onclick="window.location.href='index.html'">⬅ Back to home page</button>
+    </div>
+</main>
+
+<footer>
+    <p>© 2025 Society & Culture | contact@societyculture.fr</p>
+</footer>
+
+</body>
+</html>
