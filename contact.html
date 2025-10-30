@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact – Société & Culture</title>
+<style>
+    /* Reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { 
+        font-family: 'Segoe UI', Arial, sans-serif; 
+        background-color: #121212; 
+        color: #f5f5f5; 
+        line-height: 1.6; 
+    }
+    a { text-decoration: none; color: inherit; transition: color 0.3s; }
+
+    /* Header */
+    header { 
+        background: linear-gradient(90deg, #009688, #4CAF50, #FF9800); 
+        color: white; 
+        text-align: center; 
+        padding: 40px 20px; 
+        box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+    header h1 { font-size: 2.5em; margin-bottom: 10px; }
+    header p { font-size: 1.2em; color: #fff; }
+
+    /* Navigation */
+    nav { 
+        background-color: #1f1f1f; 
+        display: flex; 
+        justify-content: center; 
+        flex-wrap: wrap; 
+        padding: 10px 0;
+        border-bottom: 1px solid #333;
+    }
+    nav a { 
+        color: #f5f5f5; 
+        padding: 12px 18px; 
+        font-weight: bold;
+    }
+    nav a:hover { color: #FF9800; }
+
+    /* Contact Section */
+    .contact-container {
+        max-width: 700px;
+        margin: 60px auto;
+        background-color: #1f1f1f;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    }
+    .contact-container h2 {
+        text-align: center;
+        color: #FF9800;
+        margin-bottom: 25px;
+        font-size: 1.8em;
+    }
+    .contact-container p {
+        text-align: center;
+        color: #ccc;
+        margin-bottom: 30px;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    input, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #333;
+        border-radius: 8px;
+        background-color: #222;
+        color: #f5f5f5;
+        font-size: 1em;
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    input:focus, textarea:focus {
+        border-color: #FF9800;
+        box-shadow: 0 0 8px rgba(255,152,0,0.5);
+        outline: none;
+    }
+    textarea { resize: none; }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 12px;
+        cursor: pointer;
+        font-size: 1em;
+        transition: background 0.3s, transform 0.2s;
+    }
+    button:hover {
+        background-color: #FF9800;
+        transform: translateY(-2px);
+    }
+
+    /* Success message */
+    .success {
+        display: none;
+        text-align: center;
+        color: #4CAF50;
+        font-weight: bold;
+        margin-top: 15px;
+    }
+
+    /* Footer */
+    footer {
+        background-color: #1f1f1f;
+        color: #bbb;
+        text-align: center;
+        padding: 25px 0;
+        margin-top: 60px;
+        border-top: 1px solid #333;
+    }
+
+    @media (max-width: 600px) {
+        .contact-container { margin: 30px 20px; padding: 25px; }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Contactez-nous</h1>
+    <p>Nous serions ravis d’échanger avec vous !</p>
+</header>
+
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="article1.html">Connexion & Isolement</a>
+    <a href="article2.html">Influenceurs & Journalisme</a>
+    <a href="article3.html">Futur du Travail</a>
+    <a href="article4.html">Minimalisme Digital</a>
+</nav>
+
+<div class="contact-container">
+    <h2>Send us a message</h2>
+    <p>Please complete the form below, and we will respond as soon as possible.</p>
+    <form id="contactForm">
+        <input type="text" id="name" placeholder="Your name" required>
+        <input type="email" id="email" placeholder="Your email" required>
+        <textarea id="message" rows="6" placeholder="Your message..." required></textarea>
+        <button type="submit">Send</button>
+        <p class="success" id="successMessage">✅ Message envoyé avec succès !</p>
+    </form>
+</div>
+
+<footer>
+    <p>© 2025 Society & Culture | contact@societyculture.fr</p>
+</footer>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    // Simule un envoi
+    document.getElementById("successMessage").style.display = "block";
+    // Vide le formulaire
+    this.reset();
+});
+</script>
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    window.location.href = "merci.html"; // redirige vers la page de remerciement
+});
+</script>
+
+
+</body>
+</html>
