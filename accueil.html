@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Société & Culture</title>
+<style>
+    /* Reset et styles de base */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Arial', sans-serif; background-color: #f4f4f4; color: #333; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+
+    /* Header */
+    header { background-color: #4CAF50; color: white; padding: 30px 20px; text-align: center; }
+    header h1 { font-size: 2.5em; margin-bottom: 10px; }
+    header p { font-size: 1.1em; }
+
+    /* Navigation */
+    nav { background-color: #333; display: flex; justify-content: center; flex-wrap: wrap; }
+    nav a { color: white; padding: 12px 20px; display: inline-block; }
+    nav a:hover { background-color: #575757; }
+
+    /* Layout */
+    .container { display: flex; max-width: 1200px; margin: 20px auto; padding: 0 20px; gap: 20px; flex-wrap: wrap; }
+    .main { flex: 3; }
+    .sidebar { flex: 1; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); height: fit-content; }
+
+    /* Articles */
+    .article-card { background-color: white; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.2s; }
+    .article-card:hover { transform: scale(1.02); }
+    .article-card img { width: 100%; height: 180px; object-fit: cover; }
+    .article-card-content { padding: 15px; }
+    .article-card-content h2 { font-size: 1.5em; margin-bottom: 10px; color: #4CAF50; }
+    .article-card-content p { font-size: 0.95em; color: #555; }
+    .author { font-style: italic; font-size: 0.85em; color: #777; margin-bottom: 10px; }
+
+    /* Sidebar */
+    .sidebar h3 { margin-bottom: 15px; color: #4CAF50; }
+    .sidebar a { display: block; padding: 8px 0; color: #333; border-bottom: 1px solid #eee; }
+    .sidebar a:hover { color: #4CAF50; }
+
+    /* Footer */
+    footer { background-color: #333; color: white; text-align: center; padding: 20px 0; margin-top: 40px; }
+
+    /* Responsive */
+    @media(max-width: 900px) {
+        .container { flex-direction: column; }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Société & Culture</h1>
+    <p>Actualités sur la société et la culture</p>
+</header>
+
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="article1.html">Connexion et Isolement</a>
+    <a href="article2.html">Influenceurs et Journalisme</a>
+    <a href="article3.html">Futur du Travail</a>
+    <a href="article4.html">Minimalisme Numérique</a>
+</nav>
+
+<div class="container">
+    <div class="main">
+        <!-- Article 1 -->
+        <div class="article-card">
+            <img src="https://images.unsplash.com/photo-1557683316-973673baf926?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGNvbm5lY3Rpb258ZW58MHx8fHwxNjk4MzgxMjM4&ixlib=rb-4.0.3&q=80&w=400" alt="Connectés ou isolés">
+            <div class="article-card-content">
+                <p class="author">Rédigé par Alexis</p>
+                <h2><a href="article1.html">Sommes-nous la génération la plus connectée ou la plus isolée ?</a></h2>
+                <p>À l’ère numérique, les jeunes adultes passent de nombreuses heures connectés aux réseaux sociaux, ce qui soulève des questions sur l’isolement social réel.</p>
+            </div>
+        </div>
+
+        <!-- Article 2 -->
+        <div class="article-card">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGluc3RhZ3JhbWV8ZW58MHx8fHwxNjk4MzgxMjY1&ixlib=rb-4.0.3&q=80&w=400" alt="Influenceurs et journalisme">
+            <div class="article-card-content">
+                <p class="author">Rédigé par Sami</p>
+                <h2><a href="article2.html">Les influenceurs remplacent-ils les journalistes ?</a></h2>
+                <p>Les influenceurs diffusent de l’information rapidement, mais peuvent-ils vraiment remplacer le journalisme traditionnel et fiable ?</p>
+            </div>
+        </div>
+
+        <!-- Article 3 -->
+        <div class="article-card">
+            <img src="https://images.unsplash.com/photo-1581092580493-97b1b603fd94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGF1dG9tYXRpb258ZW58MHx8fHwxNjk4MzgxMjg2&ixlib=rb-4.0.3&q=80&w=400" alt="Futur du travail">
+            <div class="article-card-content">
+                <p class="author">Rédigé par Baptiste Odin</p>
+                <h2><a href="article3.html">Le futur du travail à l'ère de l'automatisation</a></h2>
+                <p>L’automatisation transforme le monde du travail, avec de nouvelles compétences nécessaires pour s’adapter aux changements rapides.</p>
+            </div>
+        </div>
+
+        <!-- Article 4 -->
+        <div class="article-card">
+            <img src="https://images.unsplash.com/photo-1565372913821-0aa03e7a9ee3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDR8fG1pbmltYWxpc21lJTIwbnVtw6ljaXF1ZXxlbnwwfHx8fDE2OTgzODEzMDM&ixlib=rb-4.0.3&q=80&w=400" alt="Minimalisme numérique">
+            <div class="article-card-content">
+                <p class="author">Rédigé par Elliot</p>
+                <h2><a href="article4.html">Le minimalisme numérique : vivre mieux avec moins d'écran</a></h2>
+                <p>Réduire le temps passé sur les écrans permet de diminuer le stress et de se concentrer sur les interactions réelles.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <h3>Articles récents</h3>
+        <a href="article1.html">Connexion et Isolement</a>
+        <a href="article2.html">Influenceurs et Journalisme</a>
+        <a href="article3.html">Futur du Travail</a>
+        <a href="article4.html">Minimalisme Numérique</a>
+    </div>
+</div>
+
+<footer>
+    <p>Contactez-nous : contact@societeculture.fr | © 2025 Société & Culture</p>
+</footer>
+
+</body>
+</html>
